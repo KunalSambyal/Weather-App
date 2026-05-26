@@ -16,10 +16,6 @@ A simple weather application built using HTML, CSS, and JavaScript that fetches 
 
 ---
 
----
-
----
-
 ## How It Works
 
 ### 1. User enters a city name
@@ -71,56 +67,6 @@ weatherData.wind.speed;
 
 ---
 
-## Installation
-
-### Clone the repository
-
-```bash
-git clone <repository-url>
-```
-
-### Open project folder
-
-```bash
-cd weather-app
-```
-
-### Add your API key
-
-Inside `index.js`:
-
-```javascript
-const apiKey = "YOUR_OPENWEATHER_API_KEY";
-```
-
-### Run
-
-Simply open:
-
-```text
-index.html
-```
-
-in your browser.
-
----
-
-## API Endpoints Used
-
-### Geocoding API
-
-```text
-https://api.openweathermap.org/geo/1.0/direct
-```
-
-### Current Weather API
-
-```text
-https://api.openweathermap.org/data/2.5/weather
-```
-
----
-
 ## Error Handling
 
 The application handles:
@@ -129,8 +75,6 @@ The application handles:
 - Invalid city names
 - Failed API requests
 - Missing weather data
-
----
 
 ---
 
