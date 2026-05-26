@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="javascript">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather App</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <div id="userInput">
+                <form action="/submit" method="POST" id="form">
+                    <input
+                        type="text"
+                        id="cityName"
+                        name="cityName"
+                        required
+                        placeholder="Enter city name"
+                    />
+                    <button type="submit" id="submitButton">submit</button>
+                </form>
+            </div>
+            <div id="displayWeather">
+                <div class="output" id="weather">Weather:</div>
+                <div class="output" id="humidity">Humidity:</div>
+                <div class="output" id="currentTemp">Temp:</div>
+                <div class="output" id="windSpeed">Wind:</div>
+            </div>
+            <img src="" alt="weather" id="weatherImg" />
+        </div>
+    </body>
+    <script src="/index.js"></script>
+</html>

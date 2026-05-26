@@ -1,0 +1,87 @@
+:root {
+    --bg-main1: hsl(216, 100%, 4%);
+    --bg-main2: hsl(211, 100%, 12%);
+    --bg-main3: hsl(209, 100%, 23%);
+    --text-color: hsl(46, 100%, 50%);
+    --accent-color: hsl(50, 100%, 52%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: verdana;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-main1);
+}
+
+#container {
+    width: min(350px, 90vw);
+    min-height: 450px;
+    padding: 40px 30px;
+    background-color: var(--bg-main2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.4);
+}
+
+#userInput {
+    padding: 10px;
+}
+
+#userInput #form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form input {
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: var(--bg-main1);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#form input:focus {
+    outline: 2px solid white;
+}
+
+#form button {
+    padding: 9px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    color: var(--bg-main1);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form button:hover {
+    background-color: var(--text-color);
+}
+
+#displayWeather {
+    font-size: 1.5rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-color);
+    align-items: center;
+    text-align: center;
+}
+
+#weatherImg {
+    display: none;
+}
