@@ -1,5 +1,3 @@
-const apiKey = "";
-
 const form = document.getElementById("form");
 const weatherDisplay = document.getElementById("weather");
 const humidityDisplay = document.getElementById("humidity");
@@ -18,8 +16,7 @@ async function getWeather(event) {
     try {
         const cityName = document.getElementById("cityName").value.trim();
 
-        const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
-        const geoResponse = await fetch(geoApiUrl);
+        const geoResponse = await fetch(`/api/geo?city=${cityName}`);
         if (!geoResponse.ok) {
             window.alert("Something went wrong while fetching resources");
             throw new Error("Not ok!");
@@ -34,9 +31,9 @@ async function getWeather(event) {
         const lat = geoData[0].lat;
         const lon = geoData[0].lon;
 
-        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-
-        const weatherResponse = await fetch(weatherApiUrl);
+        const weatherResponse = await fetch(
+            `/api/weather?lat=${lat}&lon=${lon}`,
+        );
         if (!weatherResponse.ok) {
             throw new Error("Weather API request failed");
         }
@@ -49,8 +46,6 @@ async function getWeather(event) {
         const windSpeed = weatherData.wind.speed;
 
         updateDisplay(weather, humidity, temp, windSpeed);
-
-        // done
     } catch (error) {
         console.log(error);
         alert(error.message);
